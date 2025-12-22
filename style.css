@@ -1,0 +1,463 @@
+/* style.css - ABNT Completo */
+
+/* ===== CONFIGURAÇÕES DE PÁGINA ABNT ===== */
+@page {
+    size: A4;
+    margin: 3cm 3cm 2cm 3cm; /* Superior e esquerda: 3cm | Inferior e direita: 2cm */
+}
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== CONFIGURAÇÕES GERAIS DO CORPO ===== */
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 12pt;
+    line-height: 1.0; /* Espaçamento MÍNIMO */
+    text-align: justify;
+    color: #000;
+    background: #fff;
+}
+
+article {
+    max-width: 21cm;
+    margin: 0 auto;
+    padding: 0.8cm 3cm 2cm 3cm; /* Padding-top ainda menor */
+    background: white;
+}
+
+/* ===== MODO DE VISUALIZAÇÃO ===== */
+body.page-view {
+    background: #525659;
+    padding: 2cm 0;
+}
+
+body.page-view article {
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    margin-bottom: 2cm;
+    width: 21cm;
+    min-height: 29.7cm;
+}
+
+/* ===== CABEÇALHO SUPERIOR (Biblos, E-ISSN, Logo) ===== */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.3cm; /* Ainda menor */
+    padding-bottom: 0;
+}
+
+.course-info {
+    display: flex;
+    align-items: baseline;
+    gap: 1cm;
+}
+
+.course-name {
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+.issn {
+    font-size: 12pt;
+    color: #000;
+}
+
+.logo-container-top {
+    text-align: right;
+}
+
+.top-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain; /* Mantém a proporção da imagem dentro do espaço */
+}
+
+/* ===== TÍTULO DO ARTIGO ===== */
+.article-title-section {
+    text-align: center;
+    margin-bottom: 0.4cm; /* Espaço entre título e autores */
+}
+
+.article-title {
+    font-size: 12pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin: 0;
+}
+
+/* ===== CABEÇALHO DO ARTIGO (Centralizado) ===== */
+.header {
+    text-align: center;
+    margin-bottom: 0.3cm; /* Muito próximo do resumo */
+}
+
+/* Logo da instituição - REMOVIDO */
+.logo-container {
+    display: none;
+}
+
+.institution-logo {
+    display: none;
+}
+
+/* Container dos autores lado a lado */
+.authors-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5cm;
+    text-align: left;
+    max-width: 100%;
+    margin-top: 0;
+}
+
+.author-block {
+    font-size: 8pt; /* Fonte AINDA MENOR para autores */
+    line-height: 1.1;
+}
+
+.author-name {
+    font-weight: bold;
+    margin-bottom: 0.05cm; /* Espaçamento mínimo */
+    text-align: left;
+}
+
+.author-affiliation {
+    margin-bottom: 0.05cm; /* Espaçamento mínimo */
+    text-align: left;
+    text-indent: 0;
+}
+
+.author-email {
+    margin-bottom: 0;
+    text-align: left;
+    text-indent: 0;
+}
+
+/* Remove estilos antigos de autor */
+.author {
+    font-size: 12pt;
+    margin-bottom: 0.5cm;
+    font-weight: normal;
+}
+
+.affiliation {
+    font-size: 12pt;
+    margin-bottom: 0.5cm;
+    font-weight: normal;
+}
+
+/* ===== RESUMO E ABSTRACT ===== */
+.abstract {
+    margin: 0.3cm 0 0.8cm 0; /* Muito próximo dos autores */
+}
+
+.abstract-title {
+    font-size: 10pt; /* Fonte 10 para RESUMO */
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 0.15cm; /* Espaço mínimo */
+    text-align: center; /* Centralizado */
+}
+
+.abstract-content {
+    font-size: 9pt; /* Fonte 9 para conteúdo do resumo */
+    text-indent: 0;
+    margin-bottom: 0.15cm;
+    text-align: justify;
+    line-height: 1.1;
+}
+
+.abstract p {
+    text-indent: 0;
+    margin-bottom: 0.2cm;
+    text-align: justify;
+}
+
+.keywords {
+    font-weight: normal;
+    font-style: italic;
+    font-size: 9pt;
+}
+
+.keywords strong {
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* ===== SEÇÕES PRIMÁRIAS (1, 2, 3...) ===== */
+h2 {
+    font-size: 12pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 0; /* Seções começam no topo ou após espaço do texto anterior */
+    margin-bottom: 0.5cm; /* Reduzido para deixar mais próximo do texto */
+    text-align: left;
+}
+
+section:not(:first-of-type) h2 {
+    margin-top: 1.5cm; /* Espaço entre seções - reduzido */
+}
+
+/* ===== SEÇÕES SECUNDÁRIAS (1.1, 2.1...) ===== */
+h3 {
+    font-size: 12pt;
+    font-weight: bold;
+    text-transform: none; /* Apenas primeira letra maiúscula */
+    margin-top: 1cm; /* Espaço antes da subseção - reduzido */
+    margin-bottom: 0.5cm;
+    text-align: left;
+}
+
+/* ===== SEÇÕES TERCIÁRIAS (1.1.1, 2.1.1...) ===== */
+h4 {
+    font-size: 12pt;
+    font-weight: bold;
+    font-style: normal;
+    text-transform: none;
+    margin-top: 0.8cm;
+    margin-bottom: 0.5cm;
+    text-align: left;
+}
+
+/* ===== SEÇÕES QUATERNÁRIAS ===== */
+h5 {
+    font-size: 12pt;
+    font-weight: normal;
+    font-style: italic;
+    text-transform: none;
+    margin-top: 0.8cm;
+    margin-bottom: 0.5cm;
+    text-align: left;
+}
+
+/* ===== SEÇÕES QUINÁRIAS ===== */
+h6 {
+    font-size: 12pt;
+    font-weight: normal;
+    font-style: normal;
+    text-transform: none;
+    margin-top: 0.8cm;
+    margin-bottom: 0.5cm;
+    text-align: left;
+}
+
+/* ===== PARÁGRAFOS ===== */
+p {
+    text-indent: 1.25cm; /* Recuo de parágrafo ABNT */
+    margin-bottom: 0;
+    text-align: justify;
+    line-height: 1.0; /* Espaçamento mínimo */
+}
+
+/* Remove recuo apenas do primeiro parágrafo após título */
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+    text-indent: 0;
+}
+
+/* ===== CITAÇÕES DIRETAS LONGAS (+ de 3 linhas) ===== */
+blockquote {
+    font-size: 10pt; /* Fonte menor */
+    margin: 1cm 0 1cm 4cm; /* Recuo de 4cm à esquerda - reduzido */
+    text-indent: 0;
+    line-height: 1.0; /* Espaçamento simples */
+    text-align: justify;
+}
+
+/* Parágrafo após citação não tem recuo */
+blockquote + p {
+    text-indent: 1.25cm; /* Volta o recuo normal */
+}
+
+/* ===== LISTAS ===== */
+ul, ol {
+    margin: 1cm 0 1cm 4cm; /* Alinhamento e espaçamento - reduzido */
+    line-height: 1.3;
+}
+
+li {
+    margin-bottom: 0;
+    text-align: justify;
+}
+
+/* ===== REFERÊNCIAS ===== */
+.references {
+    margin-top: 2cm; /* Separa das seções anteriores - reduzido */
+}
+
+.references h2 {
+    font-size: 12pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1cm; /* Espaço antes das referências - reduzido */
+    text-align: center; /* ABNT: centralizado */
+}
+
+.reference {
+    font-size: 12pt;
+    margin-bottom: 1cm; /* Espaço entre referências - reduzido */
+    text-indent: 0;
+    text-align: justify;
+    line-height: 1.0; /* Espaçamento simples */
+    
+    /* Recuo pendente (hanging indent) */
+    padding-left: 0.5cm;
+    text-indent: -0.5cm;
+}
+
+/* ===== NOTAS DE RODAPÉ ===== */
+.footnote {
+    font-size: 10pt;
+    line-height: 1.0;
+    margin-top: 1cm;
+    border-top: 1px solid #000;
+    padding-top: 0.5cm;
+}
+
+/* ===== TABELAS ===== */
+figure {
+    margin: 1cm 0;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Título de tabelas (acima) */
+caption {
+    font-size: 10pt;
+    margin-bottom: 0.3cm;
+    text-align: left;
+    font-weight: bold;
+    caption-side: top;
+}
+
+/* Fonte de tabelas e figuras (abaixo) */
+figcaption {
+    font-size: 10pt;
+    margin-top: 0.3cm;
+    text-align: left; /* ABNT: alinhado à esquerda */
+}
+
+table {
+    margin: 0.5cm auto;
+    border-collapse: collapse;
+    font-size: 10pt;
+    line-height: 1.0; /* Espaçamento simples em tabelas */
+    width: auto;
+    max-width: 100%;
+}
+
+/* Tabelas ABNT: bordas apenas superior e inferior */
+table {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+th, td {
+    border: none; /* Remove bordas laterais e internas */
+    padding: 0.3cm 0.5cm;
+    text-align: left;
+}
+
+/* Linha separadora do cabeçalho */
+thead {
+    border-bottom: 1px solid #000;
+}
+
+th {
+    font-weight: bold;
+    background-color: transparent; /* Sem fundo colorido */
+}
+
+/* ===== FIGURAS E GRÁFICOS ===== */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* ===== EQUAÇÕES E FÓRMULAS ===== */
+.equation {
+    text-align: center;
+    margin: 1cm 0;
+    font-style: italic;
+}
+
+/* ===== ALÍNEAS (a), b), c)...) ===== */
+.alineas {
+    list-style-type: none;
+    margin-left: 2.5cm;
+}
+
+.alineas li::before {
+    content: attr(data-letter) ") ";
+    margin-left: -1.25cm;
+}
+
+/* ===== CONTROLE DE QUEBRAS DE PÁGINA ===== */
+.no-break {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+.break-before {
+    page-break-before: always;
+    break-before: always;
+}
+
+.break-after {
+    page-break-after: always;
+    break-after: always;
+}
+
+/* Evita que títulos fiquem sozinhos no final da página */
+h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    break-after: avoid;
+}
+
+/* Evita quebra dentro de elementos */
+figure, table, blockquote {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+/* Controle de órfãs e viúvas */
+p {
+    orphans: 3; /* Mínimo de 3 linhas no final da página */
+    widows: 3;  /* Mínimo de 3 linhas no início da página */
+}
+
+/* ===== IMPRESSÃO/PDF ===== */
+@media print {
+    body.page-view {
+        background: white;
+        padding: 0;
+    }
+    
+    body.page-view article {
+        box-shadow: none;
+        margin: 0;
+        padding: 0.8cm 3cm 2cm 3cm; /* ATUALIZADO para manter consistência */
+    }
+    
+    /* Garante que cores e fundos sejam impressos */
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
